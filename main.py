@@ -1,10 +1,10 @@
 import time
-
+import os
 from telegram import Bot
 
 
-BOT_TOKEN = 'BOT_TOKEN'
-CHAT_ID = 'CHAT_ID'
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+CHAT_ID = os.getenv('CHAT_ID')
 
 
 def main():
@@ -12,12 +12,12 @@ def main():
 
     while True:
         try:
-            bot.send_message(chat_id=CHAT_ID, text='ping from heroku')
+            bot.send_message(chat_id=CHAT_ID, text='Moscow')
 
         except:
             print('Ошибка всего')
 
-        time.sleep(20 * 60)
+        time.sleep(25 * 60)
 
 
 if __name__ == '__main__':
